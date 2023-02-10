@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Contents</h1>
+            <ul>
+                <li><a href="#heading_types">Types of Headers</a></li>
+                <li><a href="#span">Span</a></li>
+                <li><a href="strong">Strong</a></li>
+                <li><a href="#unordered_list">Unordered List</a></li>
+                <li><a href="#ordered_list">Ordered List</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#forms">HTML Forms</a></li>
+                <li><a href="#semantic">Semantic Tags</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 id="heading_types">Types of Header tags</h1>
+        <div>
+            <h1>Hello World(h1)</h1>
+            <h2>Hello World(h2)</h2>
+            <h3>Hello World(h3)</h3>
+            <h4>Hello World(h4)</h4>
+            <h5>Hello World(h5)</h5>
+            <h6>Hello World(h6)</h6>
+        </div>
+        <section id="span">
+            <p><span>This text</span> may be styled <em>differently</em> than the surrounding text.</p>
+        </section>
+        <section id="strong">
+            <p>This is <strong>important</strong> text!</p>
+        </section>
+        <h1 id="unordered_list">Unordered List of Fruits</h1>
+        <ul>
+            <li>Apple</li>
+            <li>Mango</li>
+            <li>Guava</li>
+        </ul>
+        <h1 id="ordered_list">Ordered List of Stationary Items</h1>
+        <ol>
+            <li>Pen</li>
+            <li>Pencil</li>
+            <li>Eraser</li>
+        </ol>
+
+        <section id="tables">
+            <h1>Tables</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company Name</th>
+                        <th>Number of Items to Ship</th>
+                        <th>Next Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Adam's Greenworks</th>
+                        <td>14</td>
+                        <td>Package Items</td>
+                    </tr>
+                    <tr>
+                        <th>Davie's Burgers</th>
+                        <td>2</td>
+                        <td>Send Invoice</td>
+                    </tr>
+                    <tr>
+                        <th>Baker's Bike Shop</th>
+                        <td>3</td>
+                        <td>Send Invoice</td>
+                    </tr>
+                    <tr>
+                        <th>Miss Sally's Southern</th>
+                        <td>4</td>
+                        <td>Ship</td>
+                    </tr>
+                    <tr>
+                        <th>Summit Resort Rentals</th>
+                        <td>4</td>
+                        <td>Ship</td>
+                    </tr>
+                    <tr>
+                        <th>Strike Fitness</th>
+                        <td>1</td>
+                        <td>Enter Order</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Out of Town</td>
+                        <td rowspan="2">Back in Town</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <br>
+
+
+        <section id="forms">
+            <h1>HTML Forms</h1>
+            <form action="/action_page.php">
+                <section>
+                    <label for="username">Username:</label>
+                    <br>
+                    <input id="username" name="username" type="text" required minlength="3" maxlength="15"
+                        pattern="[a-zA-Z0-9]+">
+                    <br>
+                    <label for="pw">Password:</label>
+                    <br>
+                    <input id="pw" name="pw" type="password" required>
+                    <br>
+                </section>
+
+                <section class="toppings">
+                    <span>What toppings would you like?</span>
+                    <br>
+                    <!--Code for the first checkbox-->
+                    <label for="lettuce">Lettuce</label>
+
+                    <input id="lettuce" name="topping" type="checkbox" value="lettuce"></input>
+
+                    <!--Code for the second checkbox-->
+                    <label for="tomato">Tomato</label>
+                    <input id="tomato" name="topping" type="checkbox" value="tomato"></input>
+                </section>
+                <section>
+                    <label for="spicy" id="spicy">Less Spicy</label>
+                    <input type="range" name="spicy" min="0" max="10" step="0.5">
+                    <label for="spicy">More Spicy</label>
+                </section>
+
+                <section class="cheesy">
+                    <span>Would you like to add cheese?</span>
+                    <br>
+                    <!--First radio button below-->
+                    <input type="radio" id="yes" name="cheese" value="yes">
+                    <label for="yes">Yes</label>
+                    <!--Second radio button below-->
+                    <input type="radio" id="no" name="cheese" value="no">
+                    <label for="no">No</label>
+                </section>
+                <section class="bun-type">
+                    <!-- Drop down select option code. -->
+                    <label for="bun">What type of bun would you like?</label>
+                    <select id="bun" name="bun">
+                        <option value="sesame">Sesame</option>
+                        <option value="potato">Potato</option>
+                        <option value="tomato">Tomato</option>
+                    </select>
+
+                </section>
+                <section>
+                    Country code:
+                    <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+                </section>
+                <section>
+                    <!-- List showing matching result as you enter some text -->
+                    <label for="city">City</label>
+                    <input type="text" list="cities" id="city" name="city">
+
+                    <datalist id="cities">
+                        <option value="Kolkata"></option>
+                        <option value="Hyderabad"></option>
+                        <option value="Patna"></option>
+                        <option value="Banglore"></option>
+                        <option value="Pune"></option>
+                        <option value="Other"></option>
+                    </datalist>
+
+                </section>
+                <section class="extra-info">
+                    <label for="extra">Your full address.</label>
+                    <br>
+                    <textarea id="extra" name="extra" rows="3" cols="40">Adding default text</textarea>
+
+                </section>
+
+                <input type="submit">
+            </form>
+        </section>
+        <section id="semantic">
+            <h1>Semantic Tags</h1>
+            <section>
+                
+                <figure>
+                    <img src="https://content.codecademy.com/courses/SemanticHTML/dogimage.jpeg" />
+                    <figcaption>A cute dog.</figcaption>
+                </figure>
+            </section>
+            <section>
+                <audio controls>
+                    <source src="https://content.codecademy.com/courses/SemanticHTML/dogBarking.mp3" type="audio/mp3">
+                </audio>
+            </section>
+            <video src="https://content.codecademy.com/courses/SemanticHTML/dog-video.mp4" height="240" width="320" controls>Video not supported</video>
+            <section>
+                <embed src="https://content.codecademy.com/courses/SemanticHTML/dog-on-beach.gif" width="340"
+                    height="200" />
+            </section>
+            <article>
+                <!--Main Content-->
+                <p>This is a paragraph under the article semantic tag.</p>
+            </article>
+            <aside>
+                <!--Additional information-->
+                This paragraph is under aside semantic tag
+            </aside>
+    </main>
+    <footer>
+        <p>Contact me at +1 234 567 8910</p>
+    </footer>
+</body>
+
+</html>
