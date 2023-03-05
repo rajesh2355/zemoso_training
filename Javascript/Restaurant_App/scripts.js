@@ -381,14 +381,27 @@ bill_generate_btn.addEventListener('click', (e) => {
 
     modal_body.appendChild(total_cost);
 
-    table_data[table_no].cost = 0;
-    table_data[table_no].totalItems = Array.from(new Map([]));
-    localStorage.setItem("tables", JSON.stringify(table_data));
+    
 
     let close_btn = generate_bill_Modal.querySelector('#close_btn');
     close_btn.setAttribute("onclick", `updateTable(${table_no})`);
 
     let table_cont = document.querySelector(`#table${table_no}`);
+});
+
+/** To close the session */
+const close_session = document.querySelector('.close_session');
+close_session.addEventListener("click", (e) =>{
+    const modal_body = e.target.parentNode.parentNode;
+    let table_no = (modal_body.querySelector('.modal-title').innerHTML).charAt(6);
+    table_no = parseInt(table_no)-1;
+
+    let table_data = JSON.parse(localStorage.getItem("tables"));
+    table_data[table_no].cost = 0;
+    table_data[table_no].totalItems = Array.from(new Map([]));
+    localStorage.setItem("tables", JSON.stringify(table_data));
+
+    updateTable(table_no);
 });
 
 
@@ -458,5 +471,9 @@ generate_bill_Modal.addEventListener('shown.bs.modal', () => {
     table.style.color = "#ff2121";
 });
 
+function btn_close(event){
+    let data = event.target.id;
+    console.log("data : "+data);
+}
 
 
